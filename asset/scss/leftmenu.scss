@@ -1,0 +1,85 @@
+.aside {
+  padding: 30px 20px 50px;
+  background: var(--bg01);
+  border-radius: 12px;
+  width: 300px;
+  .scan-modul {
+    button {
+      width: 100%;
+      background: #111;
+      border-radius: 30px 20px;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 12px;
+    }
+  }
+  .aside-menu {
+    ul {
+      .menu-item {
+        &.active {
+          .depth2 {
+            display: block;
+          }
+          .menu-toggle::after {
+            transform: rotate(0deg);
+          }
+        }
+        .menu-toggle {
+          position: relative;
+          padding: 0 0 0 30px;
+          color: #fff;
+          height: 48px;
+          line-height: 48px;
+          width: 100%;
+          text-align: left;
+          font-size: 18px;
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: calc(50% - 7px);
+            right: 10px;
+            width: 14px;
+            height: 14px;
+            background: url("../icons/arrow-left-bold.png") no-repeat center /
+              14px auto;
+            transform: rotate(-180deg);
+            transition: all 0.3s ease-out;
+          }
+        }
+        .depth2 {
+          display: none;
+          li {
+            a {
+              position: relative;
+              display: block;
+              padding: 0 0 0 32px;
+              line-height: 30px;
+              color: #fff;
+              box-sizing: border-box;
+              height: 32px;
+              &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 14px;
+                left: 20px;
+                width: 4px;
+                height: 4px;
+                background: #fff;
+                border-radius: 1px;
+              }
+              &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50px;
+              }
+            }
+            & + li {
+              margin-top: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.table-wrap {
+  will-change: scroll-position;
+  transform: translateZ(0);
+  overflow: auto;
+  max-height: 300px;
+  &:has(.col) {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .col {
+      & + .col {
+        margin-left: 20px;
+      }
+      .transfer-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        border: 1px solid var(--border02);
+        & + .transfer-btn {
+          margin-top: 10px;
+        }
+        &.right {
+          background: url(../icon/arrow-right.svg) no-repeat center / 24px auto;
+        }
+        &.left {
+          background: url(../icon/arrow-left.svg) no-repeat center / 24px auto;
+        }
+      }
+    }
+  }
+  .table {
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+    caption {
+      @include blind();
+    }
+    th,
+    td {
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background: #f8f8f8;
+    }
+    td {
+    }
+    thead {
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 22;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        z-index: 111;
+      }
+    }
+    tbody {
+      max-height: 100px;
+    }
+  }
+}
+
+/*pagination*/
+.pagination {
+  text-align: center;
+  .page {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    .page-control,
+    .page-list {
+      display: flex;
+      align-items: center;
+      .page-btn {
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        color: var(--gray01);
+        &.active {
+          background: var(--secondary);
+          color: var(--white);
+        }
+        &.first {
+          background: url("../icon/ico-page-first.svg") no-repeat center / 18px
+            auto;
+        }
+        &.prev {
+          margin-right: 20px;
+          width: 43px;
+          padding-left: 17px;
+          font-size: 15px;
+          background: url("../icon/ico-page-prev.svg") no-repeat left center /
+            12px auto;
+        }
+        &.next {
+          margin-left: 20px;
+          width: 43px;
+          font-size: 15px;
+          padding-right: 17px;
+          background: url("../icon/ico-page-next.svg") no-repeat right center /
+            12px auto;
+        }
+        &.last {
+          background: url("../icon/ico-page-last.svg") no-repeat center / 18px
+            auto;
+        }
+      }
+    }
+  }
+}

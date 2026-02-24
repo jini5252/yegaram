@@ -1,0 +1,144 @@
+html,
+body {
+  font-size: var(--fs-base);
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* reset */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-common);
+}
+fieldset,
+img {
+  border: 0 none;
+}
+img {
+  max-width: 100%;
+}
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+input,
+select,
+textarea,
+button {
+  vertical-align: middle;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+body {
+  background: #ffffff;
+
+  line-height: 1.5;
+}
+body,
+th,
+td,
+input,
+select,
+textarea,
+button {
+}
+a {
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+}
+a:active,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+b,
+strong {
+  color: inherit;
+  -webkit-text-fill-color: inherit;
+  font-weight: 700;
+}
+//애플관련
+input {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+}
+table {
+  border-collapse: collapse;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "kfinco",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "sass asset/scss/finco-style.scss asset/css/finco-style.css --no-source-map --style=expanded",
+    "watch": "sass asset/scss/finco-style.scss asset/css/finco-style.css --no-source-map --style=expanded --watch",
+    "dev": "concurrently \"npm run watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "sass": "^1.90.0"
+  }
+}

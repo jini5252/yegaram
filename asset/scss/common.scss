@@ -1,0 +1,167 @@
+:root {
+  /*color*/
+  --primary: #4e32a5;
+  --secondary: #111;
+  --white: #fff;
+  --brand: #f1108e;
+  --gray01: #666;
+
+  /*border*/
+  --border01: #919191;
+  --border02: #bbb;
+  --border03: #e1e1e1;
+  --border04: #dddddd;
+  --border05: #d9d9d9;
+  --border06: #999;
+  --border07: #d7d7d7;
+
+  /*bg*/
+  --bg01: #333;
+  --bg02: #f8f8f8;
+  --bg03: #fafafa;
+  --bg04: #f7f9fc;
+  --bg05: #d7d7d7;
+
+  /*text color*/
+  --text01: #111;
+  --text02: #666;
+  --text04: #757575;
+  --text05: #999;
+  --text-warning: #db0404;
+
+  /*font-family*/
+  --font-family-common: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo",
+    "Malgun Gothic", Arial, Helvetica, sans-serif;
+
+  /*font-size*/
+  --fs-xxl: 60px;
+  --fs-xl: 40px;
+  --fs-lg: 30px;
+  --fs-md: 24px;
+  --fs-sm: 20px;
+  --fs-base: 16px;
+  --fs-sub: 14px;
+
+  /*spacing*/
+
+  /*pc width*/
+  --min-width: 1400px;
+}
+
+/*색상 클래스 */
+.color-primary {
+  color: var(--primary);
+}
+
+/*접근성*/
+.blind {
+  @include blind();
+  border: 0;
+}
+
+/*skip*/
+.skip {
+  position: relative;
+  overflow: hidden;
+  z-index: 3000;
+  width: 100%;
+  a {
+    display: block !important;
+    overflow: hidden;
+    z-index: 3000;
+    height: 1px;
+    width: 1px;
+    margin: 0 -1px -1px 0;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    &:focus,
+    &:hover {
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 8px 0;
+      background: #20262c;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+    }
+  }
+}
+
+/*wrap*/
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*header*/
+header {
+  min-width: var(--min-width);
+  background: var(--bg01);
+  .header {
+    @include flexBeetween();
+    margin: 0 auto;
+    padding: 16px 40px;
+    height: 80px;
+    .logo {
+      width: 225px;
+      img {
+        vertical-align: middle;
+      }
+    }
+    .util {
+      .util-item {
+        @include flexStart();
+        gap: 16px;
+        li {
+          .util-name {
+            text-align: right;
+            color: var(--brand);
+            line-height: 18px;
+            font-size: var(--fs-sub);
+            & + .util-num {
+              margin-bottom: 2px;
+            }
+          }
+          .util-num {
+            color: var(--white);
+            line-height: 18px;
+            font-size: var(--fs-sub);
+          }
+          .util-user {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url("../icon/ico-user.svg") no-repeat center center,
+              #fff;
+            border-radius: 50%;
+          }
+          .util-logout {
+            @include flexBeetween;
+            gap: 4px;
+            padding: 4px 10px;
+            background: var(--white);
+            border-radius: 20px;
+            .icon-logOut {
+              display: block;
+              width: 20px;
+              height: 20px;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*box*/
+.view-area {
+  @include boxGray();
+}

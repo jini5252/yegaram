@@ -1,0 +1,40 @@
+# Node.js modules
+node_modules/
+
+# Sass source maps
+*.css.map
+
+# macOS & Windows system files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.sass-cache
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+/bin/
+src/main/webapp/META-INF/context.xml
