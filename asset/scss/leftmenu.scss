@@ -33,6 +33,19 @@
           width: 100%;
           text-align: left;
           font-size: 18px;
+          &.img-check {
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 10px;
+              left: 0;
+              width: 24px;
+              height: 24px;
+              background: url("../icon/icon_image_check.svg") no-repeat left
+                center / 24px 24px;
+            }
+          }
           &:after {
             content: "";
             display: block;
@@ -41,7 +54,7 @@
             right: 10px;
             width: 14px;
             height: 14px;
-            background: url("../icons/arrow-left-bold.png") no-repeat center /
+            background: url("../icon/arrow-left-bold.png") no-repeat center /
               14px auto;
             transform: rotate(-180deg);
             transition: all 0.3s ease-out;

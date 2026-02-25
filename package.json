@@ -9,5 +9,9 @@
   "devDependencies": {
     "concurrently": "^9.2.1",
     "sass": "^1.90.0"
+  },
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
   }
 }

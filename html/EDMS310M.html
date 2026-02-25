@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대출 서류 검색화면</title>
+    <link rel="stylesheet" href="../asset/css/finco-style.css" />
+    <script src="../asset/js/header.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <div id="header"></div>
+      <!--// header -->
+      <main>
+        <div class="main-wrap">
+          <div class="aside">
+            <div class="scan-modul">
+              <button type="button">스캔모듈 다운로드</button>
+            </div>
+            <div class="aside-menu">
+              <ul>
+                <li class="menu-item">
+                  <button
+                    type="button"
+                    class="menu-toggle img-check"
+                    aria-expanded="false"
+                    aria-controls="menu-1">
+                    이미지 조회
+                  </button>
+                  <ul class="depth2" id="menu-1">
+                    <li><a href="">수신</a></li>
+                    <li><a href="">여신</a></li>
+                    <li><a href="">후선</a></li>
+                    <li><a href="">매각/매입</a></li>
+                    <li><a href="">등기필증</a></li>
+                    <li><a href="">수익증권</a></li>
+                    <li><a href="">대외</a></li>
+                    <li><a href="">회계</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <button
+                    type="button"
+                    class="menu-toggle admin"
+                    aria-expanded="false"
+                    aria-controls="menu-1">
+                    관리자
+                  </button>
+                  <ul class="depth2" id="menu-1">
+                    <li><a href="">수신</a></li>
+                    <li><a href="">여신</a></li>
+                    <li><a href="">후선</a></li>
+                    <li><a href="">매각/매입</a></li>
+                    <li><a href="">등기필증</a></li>
+                    <li><a href="">수익증권</a></li>
+                    <li><a href="">대외</a></li>
+                    <li><a href="">회계</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <button
+                    type="button"
+                    class="menu-toggle admin"
+                    aria-expanded="false"
+                    aria-controls="menu-1">
+                    스캔자동 업데이트
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="contents">
+            <div class="contents-inner">
+              <div class="form-row">
+                <h2 class="main-title">매각/매입</h2>
+                <div class="form-area">
+                  <div class="form-item">
+                    <label class="label-field" for="section01">매각/매입</label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">.매각</option>
+                    </select>
+                  </div>
+
+                  <div class="form-item">
+                    <label class="label-field" for="">년도</label>
+                    <input type="text" class="input-text" value="2025" />
+                  </div>
+                  <div class="form-item">
+                    <label class="label-field" for="">치수 </label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">1</option>
+                    </select>
+                  </div>
+
+                  <div class="form-item">
+                    <label class="label-field" for="">대출신청번호</label>
+                    <input type="text" class="input-text" />
+                  </div>
+
+                  <div class="form-item">
+                    <label class="label-field" for="">계좌번호</label>
+                    <select name="" id="" class="select-box">
+                      <option value="">전체</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="btn-wrap">
+                  <button type="button" class="btn btn-secondary line medium">
+                    조회
+                  </button>
+                </div>
+              </div>
+              <div class="form-row">
+                <h2 class="main-title">매각 처리</h2>
+                <div class="form-area">
+                  <div class="form-item small">
+                    <label class="label-field" for="section01">매각/매입</label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">2025</option>
+                    </select>
+                  </div>
+                  <div class="form-item small">
+                    <label class="label-field" for="">매각차수</label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">2025</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="btn-wrap">
+                  <button type="button" class="btn btn-secondary line medium">
+                    매각 업로드
+                  </button>
+                  <button type="button" class="btn btn-primary medium">
+                    매각 실행
+                  </button>
+                </div>
+              </div>
+              <div class="form-row">
+                <h2 class="main-title">매입 처리</h2>
+                <div class="form-area">
+                  <div class="form-item small">
+                    <label class="label-field" for="section01">매각/매입</label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">2025</option>
+                    </select>
+                  </div>
+                  <div class="form-item small">
+                    <label class="label-field" for="">매각차수</label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">2025</option>
+                    </select>
+                  </div>
+                  <div class="form-item small">
+                    <label class="label-field" for="">매각차수</label>
+                    <select name="section01" id="section01" class="select-box">
+                      <option value="">2025</option>
+                    </select>
+                  </div>
+                  <div class="form-item xsmall">
+                    <label class="label-field" for=""
+                      >KEY 값 검색 자릿수:</label
+                    >
+                    <input type="text" class="input-text" />
+                    <span>부터</span>
+                    <input type="text" class="input-text" />
+                    <span>까지</span>
+                  </div>
+                </div>
+                <div class="btn-wrap">
+                  <button type="button" class="btn btn-secondary line medium">
+                    매각 업로드
+                  </button>
+                  <button type="button" class="btn btn-primary medium">
+                    매각 실행
+                  </button>
+                </div>
+              </div>
+              <div class="form-row-tbl">
+                <div class="table-wrap">
+                  <table class="table">
+                    <caption>
+                      여신서류 테이블
+                    </caption>
+                    <colgroup>
+                      <col style="width: 5%" />
+                      <col style="width: 7%" />
+                      <col style="width: auto" />
+                      <col style="width: auto" />
+                      <col style="width: auto" />
+                      <col style="width: auto" />
+                      <col style="width: auto" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">순번</th>
+                        <th scope="col">구분</th>
+                        <th scope="col">대출접수번호</th>
+                        <th scope="col">고객번호</th>
+                        <th scope="col">대출일</th>
+                        <th scope="col">성명/사업자명</th>
+                        <th scope="col">담당자/사번</th>
+                        <th scope="col">등록지점</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>매각</td>
+                        <td>123456789</td>
+                        <td>123456789</td>
+                        <td>2025-08-25</td>
+                        <td>홍길동</td>
+                        <td>김가람/12345678</td>
+                        <td>강남</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="pagination">
+                  <div class="page">
+                    <span class="page-control">
+                      <a
+                        href="#"
+                        title="처음 페이지로 이동"
+                        class="page-btn first">
+                      </a>
+
+                      <a
+                        href="#"
+                        title="이전 페이지로 이동"
+                        class="page-btn prev"
+                        >이전</a
+                      >
+                    </span>
+                    <span class="page-list">
+                      <strong
+                        href="#"
+                        title="현재 페이지"
+                        class="page-btn active"
+                        >1</strong
+                      >
+
+                      <a href="#" title="1번째 페이지로 이동" class="page-btn"
+                        >2</a
+                      >
+
+                      <a href="#" title="2번째 페이지로 이동" class="page-btn"
+                        >3</a
+                      >
+                    </span>
+                    <span class="page-control">
+                      <a
+                        href="#"
+                        title="다음 페이지로 이동"
+                        class="page-btn next"
+                        >다음</a
+                      >
+                      <a
+                        href="#"
+                        title="마지막 페이지로 이동"
+                        class="page-btn last"></a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.querySelectorAll(".menu-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          const menuItem = button.closest(".menu-item");
+          const isOpen = menuItem.classList.contains("active");
+
+          menuItem.classList.toggle("active", !isOpen);
+          button.setAttribute("aria-expanded", String(!isOpen));
+        });
+      });
+    </script>
+  </body>
+</html>

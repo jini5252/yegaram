@@ -1,8 +1,20 @@
 .table-wrap {
-  will-change: scroll-position;
-  transform: translateZ(0);
-  overflow: auto;
+  overflow-y: auto;
   max-height: 300px;
+  width: 100%;
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg02);
+    border-radius: var(--border-radius-sm);
+    margin: 50px 0 0 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg05);
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
   &:has(.col) {
     display: flex;
     justify-content: start;
@@ -30,10 +42,19 @@
   }
   .table {
     width: 100%;
+    border-collapse: collapse;
     text-align: center;
     table-layout: fixed;
+    border-spacing: 0;
+    empty-cells: show;
+    margin: 0;
     caption {
       @include blind();
+    }
+
+    tr {
+      width: 100%;
+      table-layout: fixed;
     }
     th,
     td {
@@ -44,29 +65,26 @@
       background: #f8f8f8;
     }
     td {
+      color: var(--text02);
     }
     thead {
       position: sticky;
-      left: 0;
-      top: 0;
+      top: -2px;
       z-index: 22;
-      transform: translateZ(0);
-      backface-visibility: hidden;
+      // &:after {
+      //   content: "";
 
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #000;
-        z-index: 111;
-      }
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 2px;
+      //   background-color: #000;
+      //   z-index: 111;
+      // }
     }
     tbody {
-      max-height: 100px;
+      overflow-y: auto;
     }
   }
 }
