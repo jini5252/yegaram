@@ -358,7 +358,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   top: 15px;
   width: 20px;
   height: 20px;
-  background: url("../images/choice_icon.png") no-repeat;
+  background: url("../icon/choice_icon.png") no-repeat;
 }
 
 /*select box */
@@ -379,7 +379,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   top: 15px;
   width: 20px;
   height: 20px;
-  background: url("../images/choice_icon.png") no-repeat;
+  background: url("../icon/choice_icon.png") no-repeat;
 }
 
 /*input[type="text"]*/
@@ -994,7 +994,7 @@ main .main-wrap .contents .contents-inner {
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
-  background: url("../images/ico-popup-close.svg") no-repeat center/40px auto;
+  background: url("../icon/ico-popup-close.svg") no-repeat center/20px auto;
 }
 .popup-container .popup-dialog .popup-content .popup-body {
   flex: 1;
