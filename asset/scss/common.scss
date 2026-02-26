@@ -58,11 +58,25 @@
 .color-primary {
   color: var(--primary);
 }
+.color-secondary {
+  color: var(--secondary);
+}
 
 /*접근성*/
 .blind {
   @include blind();
   border: 0;
+}
+
+/*정렬*/
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
 }
 
 /*skip*/

@@ -205,6 +205,10 @@ table {
   color: var(--primary);
 }
 
+.color-secondary {
+  color: var(--secondary);
+}
+
 /*접근성*/
 .blind {
   position: absolute;
@@ -217,6 +221,19 @@ table {
   white-space: nowrap;
   border: 0;
   border: 0;
+}
+
+/*정렬*/
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
 }
 
 /*skip*/
@@ -602,7 +619,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
 .btn.large.round {
   border-radius: 20px;
 }
-.btn.large + .btn-large {
+.btn.large + .large {
   margin-left: 10px;
 }
 .btn.large[class^=ico-]::before, .btn.large[class*=ico-]::before {
@@ -620,7 +637,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   min-width: 130px;
   font-size: 16px;
 }
-.btn.medium[class^=ico-]::before, .btn.medium[class*=" ico-"]::before {
+c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
   content: "";
   display: block;
   width: 24px;
@@ -628,6 +645,15 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   background-size: 20px auto;
   background-position: center;
   background-repeat: no-repeat;
+}
+.btn.small {
+  padding: 10px 7px;
+  min-height: 36px;
+  min-width: 130px;
+  font-size: 16px;
+}
+.btn.small.square {
+  border-radius: 0;
 }
 .btn.btn-primary.line.ico-download::before {
   background-image: url("../icon/ico_download_line.svg");
@@ -659,6 +685,11 @@ header .header .util .util-item li .util-logout .icon-logOut img {
 }
 .search-btn + .table-wrap {
   margin-top: 40px;
+}
+
+/*icons*/
+.refresh {
+  border: 1px solid var(--border02);
 }
 
 .table-wrap {
@@ -820,7 +851,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
 .aside .aside-menu ul .menu-item.active .menu-toggle::after {
   transform: rotate(0deg);
 }
-.aside .aside-menu ul .menu-item .menu-toggle {
+.aside .aside-menu ul .menu-item button {
   position: relative;
   padding: 0 0 0 30px;
   color: #fff;
@@ -830,7 +861,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   text-align: left;
   font-size: 18px;
 }
-.aside .aside-menu ul .menu-item .menu-toggle.img-check::before {
+.aside .aside-menu ul .menu-item button.img-check::before {
   content: "";
   display: block;
   position: absolute;
@@ -840,7 +871,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   height: 24px;
   background: url("../icon/icon_image_check.svg") no-repeat left center/24px 24px;
 }
-.aside .aside-menu ul .menu-item .menu-toggle:after {
+.aside .aside-menu ul .menu-item button.menu-toggle:after {
   content: "";
   display: block;
   position: absolute;
@@ -859,7 +890,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   position: relative;
   display: block;
   padding: 0 0 0 32px;
-  line-height: 30px;
+  line-height: 32px;
   color: #fff;
   box-sizing: border-box;
   height: 32px;
@@ -875,7 +906,7 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   background: #fff;
   border-radius: 1px;
 }
-.aside .aside-menu ul .menu-item .depth2 li a:hover {
+.aside .aside-menu ul .menu-item .depth2 li a:hover, .aside .aside-menu ul .menu-item .depth2 li a.active {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
 }
@@ -960,6 +991,64 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
   font-weight: 700;
 }
 
+/*image-viewer*/
+.viewer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: stretch;
+  height: 100%;
+}
+.viewer .viewer-area {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.viewer .viewer-search {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 20px;
+  background: var(--white);
+  padding: 16px;
+  height: fit-content;
+}
+.viewer .viewer-search.viewer-search-md {
+  width: 400px;
+}
+.viewer .viewer-search .viewer-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.viewer .viewer-search .table-wrap .table tr td,
+.viewer .viewer-search .table-wrap .table tr th {
+  font-size: 15px;
+  padding: 8px 12px;
+  text-align: left;
+}
+.viewer .viewer-search .table-wrap .table tr th {
+  font-weight: 500;
+}
+.viewer .viewer-search .btn-wrap .btn {
+  width: 100%;
+  font-size: 15px;
+}
+.viewer .viewer-search .btn-wrap .btn.refresh {
+  min-width: 24px;
+  width: auto;
+}
+.viewer .viewer-search .search-info .btn-wrap {
+  margin-top: 10px;
+}
+.viewer .viewer-search .search-document {
+  margin-top: 20px;
+}
+.viewer .viewer-search .search-document .btn-wrap {
+  margin-bottom: 10px;
+}
+
 .dimmed {
   display: none;
   inset: 0;
@@ -975,82 +1064,24 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.popup-container {
-  display: flex;
-  position: fixed;
-  left: 0;
-  top: 0;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  z-index: 1000;
-  height: 100vh;
-  inset: 0;
-}
-.popup-container.show {
-  display: flex !important;
-}
-.popup-container .popup-dialog {
-  position: relative;
-  background-color: var(--white);
-  margin: 0 auto;
-  min-height: 100px;
-}
-.popup-container .popup-dialog.wide {
-  max-width: 1168px;
-  width: 100%;
-}
-.popup-container .popup-dialog.xl {
-  max-width: 1000px;
-  width: 100%;
-}
-.popup-container .popup-dialog.lg {
-  max-width: 840px;
-  width: 100%;
-}
-.popup-container .popup-dialog.md {
-  max-width: 800px;
-  width: 100%;
-}
-.popup-container .popup-dialog.sm {
-  max-width: 600px;
-  width: 100%;
-}
-.popup-container .popup-dialog.sm .form-field .form-column .label-field {
-  width: auto;
-}
-.popup-container .popup-dialog.sm .form-field .form-column .input-field {
-  width: 100%;
-  flex: 1;
-}
-.popup-container .popup-dialog.tiny {
-  max-width: 500px;
-  width: 100%;
-  max-height: 753px;
-}
-.popup-container .popup-dialog.transfer .popup-content .popup-body .form-field {
-  width: calc(50% - 48px);
-}
-.popup-container .popup-dialog.transfer .popup-content .popup-body .transfer-box {
-  margin-block: 20px;
-}
-.popup-container .popup-dialog .popup-content {
+/*팝업 공통(새창팝업, 모달팝업)*/
+.popup-content {
   display: flex;
   flex-direction: column;
   height: -webkit-fill-available;
 }
-.popup-container .popup-dialog .popup-content .popup-header {
+.popup-content .popup-header {
   position: relative;
   padding: 15px 40px;
   border-bottom: 1px solid var(--border07);
   height: 80px;
   align-content: center;
 }
-.popup-container .popup-dialog .popup-content .popup-header .popup-title {
+.popup-content .popup-header .popup-title {
   font-size: 20px;
   font-weight: 500;
 }
-.popup-container .popup-dialog .popup-content .popup-header .popup-close {
+.popup-content .popup-header .popup-close {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -1059,52 +1090,113 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
   transform: translateY(-50%);
   background: url("../icon/ico-popup-close.svg") no-repeat center/20px auto;
 }
-.popup-container .popup-dialog .popup-content .popup-body {
+.popup-content .popup-body {
   flex: 1;
   min-height: 0;
   padding: 40px 40px 0;
 }
-.popup-container .popup-dialog .popup-content .popup-body .view-area {
+.popup-content .popup-body .box-transparent {
+  padding-bottom: 40px;
+}
+.popup-content .popup-body .view-area {
   margin-bottom: 40px;
 }
-.popup-container .popup-dialog .popup-content .popup-body .view-area:has(+ .search-btn) {
+.popup-content .popup-body .view-area:has(+ .search-btn) {
   margin-bottom: 0;
 }
-.popup-container .popup-dialog .popup-content .popup-body .txt-box {
+.popup-content .popup-body .txt-box {
   margin-block: 20px;
   font-size: var(--fs-base);
   line-height: 1.5;
   text-align: center;
 }
-.popup-container .popup-dialog .popup-content .popup-body .txt-box:first-child {
+.popup-content .popup-body .txt-box:first-child {
   margin-top: 0;
 }
-.popup-container .popup-dialog .popup-content .popup-body .txt-box .primary {
+.popup-content .popup-body .txt-box .primary {
   font-weight: 500;
   color: var(--primary);
 }
-.popup-container .popup-dialog .popup-content .popup-footer {
+.popup-content .popup-footer {
   flex-shrink: 0;
   padding: 0 40px 40px;
 }
 
-@media (max-width: 767px) {
-  .popup-container .popup-dialog .popup-content .popup-header {
-    padding: 20px;
-    height: 64px;
-  }
-  .popup-container .popup-dialog .popup-content .popup-body {
-    padding: 20px;
-  }
-  .popup-container .popup-dialog .popup-content .popup-footer {
-    padding: 0 20px 20px;
-  }
-  .popup-container .popup-dialog {
-    max-height: 100%;
-    height: 100vh;
-  }
-  .btn.large {
-    height: 48px;
-    font-size: 16px;
-  }
+.modal-container,
+.popup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*모달*/
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 100vh;
+  inset: 0;
+}
+.modal-container.show {
+  display: flex !important;
+}
+.modal-container .modal-dialog {
+  position: relative;
+  background-color: var(--white);
+  margin: 0 auto;
+  min-height: 100px;
+}
+.modal-container .modal-dialog.wide {
+  max-width: 1168px;
+  width: 100%;
+}
+.modal-container .modal-dialog.xl {
+  max-width: 1000px;
+  width: 100%;
+}
+.modal-container .modal-dialog.lg {
+  max-width: 840px;
+  width: 100%;
+}
+.modal-container .modal-dialog.md {
+  max-width: 800px;
+  width: 100%;
+}
+.modal-container .modal-dialog.sm {
+  max-width: 600px;
+  width: 100%;
+}
+.modal-container .modal-dialog.sm .form-field .form-column .label-field {
+  width: auto;
+}
+.modal-container .modal-dialog.sm .form-field .form-column .input-field {
+  width: 100%;
+  flex: 1;
+}
+.modal-container .modal-dialog.tiny {
+  max-width: 500px;
+  width: 100%;
+  max-height: 753px;
+}
+.modal-container .modal-dialog.transfer .popup-content .popup-body .form-field {
+  width: calc(50% - 48px);
+}
+.modal-container .modal-dialog.transfer .popup-content .popup-body .transfer-box {
+  margin-block: 20px;
+}
+
+/*새창 팝업*/
+.popup-container {
+  justify-content: space-between;
+  height: 100%;
+  align-items: start;
+}
+.popup-container .popup-dialog {
+  width: 100%;
+  height: 100%;
+}
+.popup-container .popup-footer {
+  margin-top: auto;
 }

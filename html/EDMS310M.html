@@ -14,62 +14,7 @@
       <!--// header -->
       <main>
         <div class="main-wrap">
-          <div class="aside">
-            <div class="scan-modul">
-              <button type="button">스캔모듈 다운로드</button>
-            </div>
-            <div class="aside-menu">
-              <ul>
-                <li class="menu-item">
-                  <button
-                    type="button"
-                    class="menu-toggle img-check"
-                    aria-expanded="false"
-                    aria-controls="menu-1">
-                    이미지 조회
-                  </button>
-                  <ul class="depth2" id="menu-1">
-                    <li><a href="">수신</a></li>
-                    <li><a href="">여신</a></li>
-                    <li><a href="">후선</a></li>
-                    <li><a href="">매각/매입</a></li>
-                    <li><a href="">등기필증</a></li>
-                    <li><a href="">수익증권</a></li>
-                    <li><a href="">대외</a></li>
-                    <li><a href="">회계</a></li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <button
-                    type="button"
-                    class="menu-toggle admin"
-                    aria-expanded="false"
-                    aria-controls="menu-1">
-                    관리자
-                  </button>
-                  <ul class="depth2" id="menu-1">
-                    <li><a href="">수신</a></li>
-                    <li><a href="">여신</a></li>
-                    <li><a href="">후선</a></li>
-                    <li><a href="">매각/매입</a></li>
-                    <li><a href="">등기필증</a></li>
-                    <li><a href="">수익증권</a></li>
-                    <li><a href="">대외</a></li>
-                    <li><a href="">회계</a></li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <button
-                    type="button"
-                    class="menu-toggle admin"
-                    aria-expanded="false"
-                    aria-controls="menu-1">
-                    스캔자동 업데이트
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <div class="aside" id="sideBar"></div>
           <div class="contents">
             <div class="contents-inner">
               <div class="form-row">
@@ -330,8 +275,9 @@
         </div>
       </main>
     </div>
-
-    <script>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".menu-toggle").forEach((button) => {
         button.addEventListener("click", () => {
           const menuItem = button.closest(".menu-item");
@@ -341,6 +287,6 @@
           button.setAttribute("aria-expanded", String(!isOpen));
         });
       });
-    </script>
-  </body>
+    });
+  </script>
 </html>

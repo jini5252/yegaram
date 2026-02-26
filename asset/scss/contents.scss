@@ -78,3 +78,71 @@ main {
     }
   }
 }
+
+/*image-viewer*/
+.viewer {
+  @include flexStart();
+  gap: 20px;
+  align-items: stretch;
+  height: 100%;
+
+  .viewer-area {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .viewer-search {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 20px;
+    background: var(--white);
+    padding: 16px;
+    height: fit-content;
+    &.viewer-search-md {
+      width: 400px;
+    }
+    .viewer-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .table-wrap {
+      .table {
+        tr {
+          td,
+          th {
+            font-size: 15px;
+            padding: 8px 12px;
+            text-align: left;
+          }
+          th {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .btn-wrap {
+      .btn {
+        width: 100%;
+        font-size: 15px;
+        &.refresh {
+          min-width: 24px;
+          width: auto;
+        }
+      }
+    }
+    .search-info {
+      .btn-wrap {
+        margin-top: 10px;
+      }
+    }
+    .search-document {
+      margin-top: 20px;
+
+      .btn-wrap {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

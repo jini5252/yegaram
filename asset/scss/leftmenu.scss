@@ -24,7 +24,7 @@
             transform: rotate(0deg);
           }
         }
-        .menu-toggle {
+        button {
           position: relative;
           padding: 0 0 0 30px;
           color: #fff;
@@ -46,18 +46,20 @@
                 center / 24px 24px;
             }
           }
-          &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: calc(50% - 7px);
-            right: 10px;
-            width: 14px;
-            height: 14px;
-            background: url("../icon/arrow-left-bold.png") no-repeat center /
-              14px auto;
-            transform: rotate(-180deg);
-            transition: all 0.3s ease-out;
+          &.menu-toggle {
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: calc(50% - 7px);
+              right: 10px;
+              width: 14px;
+              height: 14px;
+              background: url("../icon/arrow-left-bold.png") no-repeat center /
+                14px auto;
+              transform: rotate(-180deg);
+              transition: all 0.3s ease-out;
+            }
           }
         }
         .depth2 {
@@ -67,7 +69,7 @@
               position: relative;
               display: block;
               padding: 0 0 0 32px;
-              line-height: 30px;
+              line-height: 32px;
               color: #fff;
               box-sizing: border-box;
               height: 32px;
@@ -82,7 +84,8 @@
                 background: #fff;
                 border-radius: 1px;
               }
-              &:hover {
+              &:hover,
+              &.active {
                 background: rgba(255, 255, 255, 0.2);
                 border-radius: 50px;
               }

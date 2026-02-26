@@ -115,15 +115,7 @@
     line-height: 45px;
   }
   fieldset {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    @include blind();
   }
   & + .form-row {
     margin-top: 30px;
@@ -145,7 +137,6 @@
         font-size: 16px;
         font-weight: 500;
       }
-
       &.small {
         .select-box,
         .input-text {
@@ -280,7 +271,7 @@
     &.round {
       border-radius: 20px;
     }
-    & + .btn-large {
+    & + .large {
       margin-left: 10px;
     }
     // 아이콘 공통
@@ -305,7 +296,7 @@
     // 아이콘 공통
     &[class^="ico-"],
     &[class*=" ico-"] {
-      &::before {
+      c &::before {
         content: "";
         display: block;
         width: 24px;
@@ -314,6 +305,15 @@
         background-position: center;
         background-repeat: no-repeat;
       }
+    }
+  }
+  &.small {
+    padding: 10px 7px;
+    min-height: 36px;
+    min-width: 130px;
+    font-size: 16px;
+    &.square {
+      border-radius: 0;
     }
   }
   &.btn-primary {
@@ -353,4 +353,9 @@
   & + .table-wrap {
     margin-top: 40px;
   }
+}
+
+/*icons*/
+.refresh {
+  border: 1px solid var(--border02);
 }
