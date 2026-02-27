@@ -167,6 +167,7 @@ table {
   --border05: #d9d9d9;
   --border06: #999;
   --border07: #d7d7d7;
+  --border08: #111;
   /*bg*/
   --bg01: #333;
   --bg02: #f8f8f8;
@@ -693,9 +694,10 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
 }
 
 .table-wrap {
-  overflow-y: auto;
+  position: relative;
   max-height: 300px;
   width: 100%;
+  overflow: auto;
 }
 .table-wrap::-webkit-scrollbar-track {
   background: var(--bg02);
@@ -708,29 +710,6 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
 }
 .table-wrap::-webkit-scrollbar {
   width: 6px;
-}
-.table-wrap:has(.col) {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-.table-wrap:has(.col) .col + .col {
-  margin-left: 20px;
-}
-.table-wrap:has(.col) .col .transfer-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  border: 1px solid var(--border02);
-}
-.table-wrap:has(.col) .col .transfer-btn + .transfer-btn {
-  margin-top: 10px;
-}
-.table-wrap:has(.col) .col .transfer-btn.right {
-  background: url(../icon/arrow-right.svg) no-repeat center/24px auto;
-}
-.table-wrap:has(.col) .col .transfer-btn.left {
-  background: url(../icon/arrow-left.svg) no-repeat center/24px auto;
 }
 .table-wrap .table {
   width: 100%;
@@ -763,13 +742,26 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
 }
 .table-wrap .table th {
   background: #f8f8f8;
+  font-weight: 500;
+  border-top: 0;
 }
 .table-wrap .table td {
   color: var(--text02);
 }
 .table-wrap .table thead {
   position: sticky;
-  top: -2px;
+  top: 0;
+  z-index: 22;
+}
+.table-wrap .table thead:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary);
   z-index: 22;
 }
 .table-wrap .table tbody {
@@ -1031,6 +1023,16 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
 .viewer .viewer-search .table-wrap .table tr th {
   font-weight: 500;
 }
+.viewer .viewer-search .table-wrap:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--bg01);
+}
 .viewer .viewer-search .btn-wrap .btn {
   width: 100%;
   font-size: 15px;
@@ -1116,6 +1118,39 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
 .popup-content .popup-body .txt-box .primary {
   font-weight: 500;
   color: var(--primary);
+}
+.popup-content .popup-body .transfer-box {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+.popup-content .popup-body .transfer-box .col:has(.transfer-btn) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: stretch;
+}
+.popup-content .popup-body .transfer-box .col + .col {
+  margin-left: 20px;
+}
+.popup-content .popup-body .transfer-box .col .transfer-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border02);
+}
+.popup-content .popup-body .transfer-box .col .transfer-btn + .transfer-btn {
+  margin-top: 10px;
+}
+.popup-content .popup-body .transfer-box .col .transfer-btn.right {
+  background: url(../icon/arrow-right.svg) no-repeat center/24px auto;
+}
+.popup-content .popup-body .transfer-box .col .transfer-btn.left {
+  background: url(../icon/arrow-left.svg) no-repeat center/24px auto;
+}
+.popup-content .popup-body .transfer-box .col .table-wrap {
+  max-height: 250px;
+  height: 250px;
 }
 .popup-content .popup-footer {
   flex-shrink: 0;

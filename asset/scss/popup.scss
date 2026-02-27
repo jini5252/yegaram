@@ -66,6 +66,42 @@
         color: var(--primary);
       }
     }
+    .transfer-box {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      .col {
+        &:has(.transfer-btn) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: stretch;
+        }
+        & + .col {
+          margin-left: 20px;
+        }
+        .transfer-btn {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
+          border: 1px solid var(--border02);
+          & + .transfer-btn {
+            margin-top: 10px;
+          }
+          &.right {
+            background: url(../icon/arrow-right.svg) no-repeat center / 24px
+              auto;
+          }
+          &.left {
+            background: url(../icon/arrow-left.svg) no-repeat center / 24px auto;
+          }
+        }
+        .table-wrap {
+          max-height: 250px;
+          height: 250px;
+        }
+      }
+    }
   }
   .popup-footer {
     flex-shrink: 0;
