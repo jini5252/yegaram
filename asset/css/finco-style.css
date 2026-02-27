@@ -167,7 +167,6 @@ table {
   --border05: #d9d9d9;
   --border06: #999;
   --border07: #d7d7d7;
-  --border08: #111;
   /*bg*/
   --bg01: #333;
   --bg02: #f8f8f8;
@@ -415,6 +414,9 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   border: 1px solid var(--border02);
   font-size: var(--fs-base);
 }
+.input-text::placeholder {
+  text-align: center;
+}
 
 /*input[type="checkbox"]*/
 .check-box {
@@ -448,6 +450,20 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   border-radius: var(--border-radius-sm);
 }
 
+/*calendar*/
+.date-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.date-form .date-item {
+  position: relative;
+}
+.date-form .date-item .calendar-input {
+  max-width: 180px;
+  width: 100%;
+}
 /*error msg*/
 .error-text {
   margin: 5px 0 10px;
@@ -613,9 +629,24 @@ header .header .util .util-item li .util-logout .icon-logOut img {
   background-color: transparent;
   color: var(--primary);
 }
+.btn.btn-brand {
+  color: #fff;
+  background: var(--brand);
+}
+.btn.btn-brand[disabled] {
+  background-color: #eee;
+  color: #bbb;
+}
+.btn.btn-brand.line {
+  border: 1px solid var(--brand);
+  background-color: transparent;
+  color: var(--brand);
+}
 .btn.large {
   min-height: 50px;
   min-width: 160px;
+  font-size: var(--fs-base);
+  padding: 13px;
 }
 .btn.large.round {
   border-radius: 20px;
@@ -626,11 +657,16 @@ header .header .util .util-item li .util-logout .icon-logOut img {
 .btn.large[class^=ico-]::before, .btn.large[class*=ico-]::before {
   content: "";
   display: block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px auto;
+  width: 24px;
+  height: 24px;
+  background-size: 24px auto;
   background-position: center;
   background-repeat: no-repeat;
+}
+.btn.large .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
 }
 .btn.medium {
   padding: 10px 7px;
@@ -695,7 +731,7 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
 
 .table-wrap {
   position: relative;
-  max-height: 300px;
+  max-height: 272px;
   width: 100%;
   overflow: auto;
 }
@@ -710,6 +746,28 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
 }
 .table-wrap::-webkit-scrollbar {
   width: 6px;
+}
+.table-wrap:before {
+  content: "";
+  display: block;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary);
+  z-index: 232;
+}
+.table-wrap::after {
+  content: "";
+  display: block;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  z-index: 222;
 }
 .table-wrap .table {
   width: 100%;
@@ -735,6 +793,10 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
   width: 100%;
   table-layout: fixed;
 }
+.table-wrap .table tr:last-child td,
+.table-wrap .table tr:last-child th {
+  border-bottom: 0;
+}
 .table-wrap .table th,
 .table-wrap .table td {
   padding: 10px 20px;
@@ -751,17 +813,6 @@ c .btn.medium[class^=ico-]::before, c .btn.medium[class*=" ico-"]::before {
 .table-wrap .table thead {
   position: sticky;
   top: 0;
-  z-index: 22;
-}
-.table-wrap .table thead:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--secondary);
   z-index: 22;
 }
 .table-wrap .table tbody {
@@ -1005,9 +1056,14 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
   background: var(--white);
   padding: 16px;
   height: fit-content;
+  border: 1px solid var(--border04);
+  height: 100%;
 }
 .viewer .viewer-search.viewer-search-md {
   width: 400px;
+}
+.viewer .viewer-search .btn-wrap + .viewer-title {
+  margin-top: 20px;
 }
 .viewer .viewer-search .viewer-title {
   font-size: 18px;
@@ -1023,19 +1079,8 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
 .viewer .viewer-search .table-wrap .table tr th {
   font-weight: 500;
 }
-.viewer .viewer-search .table-wrap:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--bg01);
-}
 .viewer .viewer-search .btn-wrap .btn {
   width: 100%;
-  font-size: 15px;
 }
 .viewer .viewer-search .btn-wrap .btn.refresh {
   min-width: 24px;
@@ -1152,6 +1197,19 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
   max-height: 250px;
   height: 250px;
 }
+.popup-content .popup-body .table-wrap td,
+.popup-content .popup-body .table-wrap th {
+  padding: 13px 16px;
+}
+.popup-content .popup-body .table-wrap td .input-text,
+.popup-content .popup-body .table-wrap th .input-text {
+  width: 100%;
+}
+.popup-content .popup-body .table-wrap td .input-text::placeholder,
+.popup-content .popup-body .table-wrap th .input-text::placeholder {
+  text-align: center;
+  font-size: 17px;
+}
 .popup-content .popup-footer {
   flex-shrink: 0;
   padding: 0 40px 40px;
@@ -1231,6 +1289,9 @@ main .main-wrap .contents .contents-inner .form-row .btn-wrap {
 .popup-container .popup-dialog {
   width: 100%;
   height: 100%;
+}
+.popup-container .popup-dialog .popup-content .popup-body {
+  padding: 20px;
 }
 .popup-container .popup-footer {
   margin-top: auto;

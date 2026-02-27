@@ -65,6 +65,9 @@
   border-radius: 8px;
   border: 1px solid var(--border02);
   font-size: var(--fs-base);
+  &::placeholder {
+    text-align: center;
+  }
 }
 
 /*input[type="checkbox"]*/
@@ -98,6 +101,23 @@
         border-radius: var(--border-radius-sm);
       }
     }
+  }
+}
+
+/*calendar*/
+.date-form {
+  @include flexStart();
+  gap: 10px;
+  .date-item {
+    position: relative;
+    .calendar-input {
+      max-width: 180px;
+      width: 100%;
+    }
+    .icon-calendar {
+    }
+  }
+  .date-txt {
   }
 }
 
@@ -265,9 +285,25 @@
       color: var(--primary);
     }
   }
+  &.btn-brand {
+    color: #fff;
+    background: var(--brand);
+
+    &[disabled] {
+      background-color: #eee;
+      color: #bbb;
+    }
+    &.line {
+      border: 1px solid var(--brand);
+      background-color: transparent;
+      color: var(--brand);
+    }
+  }
   &.large {
     min-height: 50px;
     min-width: 160px;
+    font-size: var(--fs-base);
+    padding: 13px;
     &.round {
       border-radius: 20px;
     }
@@ -280,12 +316,17 @@
       &::before {
         content: "";
         display: block;
-        width: 20px;
-        height: 20px;
-        background-size: 20px auto;
+        width: 24px;
+        height: 24px;
+        background-size: 24px auto;
         background-position: center;
         background-repeat: no-repeat;
       }
+    }
+    .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
     }
   }
   &.medium {
@@ -356,6 +397,7 @@
 }
 
 /*icons*/
+
 .refresh {
   border: 1px solid var(--border02);
 }

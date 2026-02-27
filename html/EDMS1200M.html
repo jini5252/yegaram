@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴별 공통 권한 적용 여부 등록</title>
+    <link rel="stylesheet" href="../asset/css/finco-style.css" />
+    <script src="../asset/js/header.js"></script>
+    <script src="../asset/js/flatpickr.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="skip"><a href="#">본문바로가기</a></div>
+      <!-- header -->
+      <div id="header"></div>
+      <!--// header -->
+      <main>
+        <div class="main-wrap">
+          <div class="aside" id="sideBar"></div>
+          <div class="contents">
+            <div class="contents-inner">
+              <div class="form-row">
+                <h2 class="main-title">매각/매입</h2>
+                <form action="">
+                  <fieldset class="blind">조회 조건</fieldset>
+                  <div class="form-area">
+                    <div class="form-item">
+                      <label class="label-field" for="">매각매입</label>
+                      <select name="" id="" class="select-box">
+                        <option value="">매각</option>
+                        <option value="">매입</option>
+                      </select>
+                    </div>
+                    <div class="form-item small">
+                      <label class="label-field" for="">년도</label>
+                      <input type="text" class="input-text" />
+                    </div>
+                    <div class="form-item small">
+                      <label class="label-field" for="">치수</label>
+                      <input type="text" class="input-text" id="datePicker" />
+                    </div>
+                    <div class="form-item">
+                      <label class="label-field" for="">대출신청번호 </label>
+                      <input type="text" class="input-text" />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="form-row">
+                <h2 class="main-title">매각처리</h2>
+                <div class="form-area">
+                  <div class="form-item">
+                    <label class="label-field" for="">매각매입</label>
+                    <select name="" id="" class="select-box">
+                      <option value="">매각</option>
+                      <option value="">매입</option>
+                    </select>
+                  </div>
+                  <div class="form-item small">
+                    <label class="label-field" for="">년도</label>
+                    <input type="text" class="input-text" />
+                  </div>
+                  <div class="form-item small">
+                    <label class="label-field" for="">치수</label>
+                    <input type="text" class="input-text" />
+                  </div>
+                  <div class="form-item">
+                    <label class="label-field" for="">대출신청번호 </label>
+                    <input type="text" class="input-text" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-row-tbl">
+                <div class="sub-title">
+                  <h3>사용자 정보</h3>
+                  <div class="btn-wrap">
+                    <button type="button" class="btn btn-primary line medium">
+                      저장
+                    </button>
+                    <button type="button" class="btn btn-primary medium">
+                      저장
+                    </button>
+                    <button type="button" class="btn btn-secondary medium">
+                      등록
+                    </button>
+                    <button type="button" class="btn btn-secondary line medium">
+                      등록
+                    </button>
+                  </div>
+                </div>
+                <div class="sub-sub-title">
+                  <div class="sub-sub-txt bullet">
+                    총 <span class="color-primary">23</span>건
+                  </div>
+                  <div class="select-area">
+                    <span class="select-text">페이지당 조회 건수</span>
+                    <select name="" id="" class="select-input">
+                      <option value="">dd</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <table class="table">
+                    <caption>
+                      임원현황 테이블
+                    </caption>
+                    <colgroup>
+                      <col style="width: 24%" />
+                      <col style="width: auto" />
+                      <col style="width: auto" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">직위</th>
+                        <th scope="col">성명</th>
+                        <th scope="col">임기</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>이사</td>
+                        <td>김재관</td>
+                        <td>2023.01 ~ 2025.12</td>
+                      </tr>
+                      <tr>
+                        <td>이사<br />(경영기획본부장)</td>
+                        <td>
+                          <button type="button" class="btn btn-primary small">
+                            초기화
+                          </button>
+                        </td>
+                        <td>2024.01 ~ 2026.12</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="pagination">
+                  <div class="page">
+                    <span class="page-control">
+                      <a
+                        href="#"
+                        title="처음 페이지로 이동"
+                        class="page-btn first">
+                      </a>
+
+                      <a
+                        href="#"
+                        title="이전 페이지로 이동"
+                        class="page-btn prev"
+                        >이전</a
+                      >
+                    </span>
+                    <span class="page-list">
+                      <strong
+                        href="#"
+                        title="현재 페이지"
+                        class="page-btn active"
+                        >1</strong
+                      >
+
+                      <a href="#" title="1번째 페이지로 이동" class="page-btn"
+                        >2</a
+                      >
+
+                      <a href="#" title="2번째 페이지로 이동" class="page-btn"
+                        >3</a
+                      >
+                    </span>
+                    <span class="page-control">
+                      <a
+                        href="#"
+                        title="다음 페이지로 이동"
+                        class="page-btn next"
+                        >다음</a
+                      >
+                      <a
+                        href="#"
+                        title="마지막 페이지로 이동"
+                        class="page-btn last"></a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="dimmed show"></div>
+    <div id="popup01" class="modal-container" aria-labelledby="popupTitle">
+      <!-- role="dialog" 다이알로그이다는 표시, aria-modal="true" 배경접근 불가 -->
+      <div class="modal-dialog xl">
+        <div class="popup-content">
+          <div class="popup-header">
+            <h2 id="popupTitle" class="popup-title">
+              메뉴별 공통 권한 적용 여부 등록
+            </h2>
+            <button
+              type="button"
+              class="popup-close"
+              onclick="javascript:layerPopupFn.closeFn('popup01');">
+              <span class="blind">닫기</span>
+            </button>
+          </div>
+          <div class="popup-body">
+            <div class="view-area">
+              <div class="form-field">
+                <div class="form-column">
+                  <label class="label-field" for="">사번</label>
+                  <input type="text" value="" class="input-field" />
+                </div>
+                <div class="form-column">
+                  <label class="label-field" for="">성명</label>
+                  <input type="text" value="" class="input-field" />
+                </div>
+              </div>
+              <div class="form-field">
+                <div class="form-column full">
+                  <label class="label-field" for="">지점</label>
+                  <select name="" id="" class="select-inp">
+                    <option value=""></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="search-btn">
+              <button type="button" class="btn btn-primary medium">조회</button>
+            </div>
+            <div class="table-wrap" style="height: 300px">
+              <table class="table">
+                <caption>
+                  임원현황 테이블
+                </caption>
+                <colgroup>
+                  <col style="width: 20%" />
+                  <col style="width: 8%" />
+                  <col style="width: 20%" />
+                  <col style="width: 20%" />
+                  <col style="width: 20%" />
+                  <col style="width: 20%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">업무 권한</th>
+                    <th scope="col">선택</th>
+                    <th scope="col">시작일</th>
+                    <th scope="col">시작시간</th>
+                    <th scope="col">종료일</th>
+                    <th scope="col">종료시간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>예산관리스스템(FEP)</td>
+                    <td>
+                      <div class="check-box">
+                        <input
+                          id="name02"
+                          type="checkbox"
+                          class="check-input" />
+                        <label class="label-field blind" for="name02"
+                          >선택됨</label
+                        >
+                      </div>
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="calendar-input start-date input-text" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id=""
+                        class="input-text"
+                        placeholder="11:00:00" />
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="calendar-input start-date input-text" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input type="text" id="" class="input-text" />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>예산관리스스템(FEP)</td>
+                    <td>
+                      <div class="check-box">
+                        <input
+                          id="name02"
+                          type="checkbox"
+                          class="check-input" />
+                        <label class="label-field blind" for="name02"
+                          >선택됨</label
+                        >
+                      </div>
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="calendar-input start-date input-text" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id=""
+                        class="input-text"
+                        placeholder="11:00:00" />
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="calendar-input start-date input-text" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="input-text"
+                            placeholder="11:00:00" />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>예산관리스스템(FEP)</td>
+                    <td>
+                      <div class="check-box">
+                        <input
+                          id="name02"
+                          type="checkbox"
+                          class="check-input" />
+                        <label class="label-field blind" for="name02"
+                          >선택됨</label
+                        >
+                      </div>
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="calendar-input start-date input-text" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        id=""
+                        class="input-text"
+                        placeholder="11:00:00" />
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input
+                            type="text"
+                            id=""
+                            class="calendar-input start-date input-text" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="date-form">
+                        <div class="date-item">
+                          <input type="text" id="" class="input-text" />
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="popup-footer"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const start = flatpickr(".start-date", {
+        dateFormat: "Y-m-d",
+        allowInput: true,
+        onChange: function (selectedDates) {
+          end.set("minDate", selectedDates[0]);
+        },
+      });
+      const end = flatpickr(".end-date", {
+        dateFormat: "Y-m-d",
+        allowInput: true,
+      });
+    </script>
+  </body>
+</html>

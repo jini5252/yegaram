@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>여신 서류</title>
+    <title>이미지 뷰어 조회 메인 팝업</title>
     <link rel="stylesheet" href="../asset/css/finco-style.css" />
     <script src="../asset/js/header.js"></script>
   </head>
@@ -12,45 +12,171 @@
       <div class="popup-dialog">
         <div class="popup-content">
           <div class="popup-header">
-            <h2 id="popupTitle" class="popup-title">업데이트 버전 등록</h2>
+            <h2 id="popupTitle" class="popup-title">
+              이미지 뷰어 조회 메인 팝업
+            </h2>
           </div>
           <div class="popup-body">
-            <div class="view-area">
-              <div class="form-field">
-                <div class="form-column">
-                  <label class="label-field" for="">사번</label>
-                  <input type="text" value="" class="input-field" />
-                </div>
-                <div class="form-column">
-                  <label class="label-field" for="">사번</label>
-                  <input type="text" value="" class="input-field" />
-                </div>
+            <div class="viewer">
+              <div class="viewer-area">
+                <iframe
+                  src=""
+                  frameborder="0"
+                  style="background-color: #ddd; width: 100%; height: 100%">
+                  <span>iframe</span>
+                </iframe>
               </div>
-              <div class="form-field">
-                <div class="form-column">
-                  <label class="label-field" for="">사번</label>
-                  <input type="text" value="" class="input-field" />
-                </div>
-                <div class="form-column">
-                  <label class="label-field" for="">사번</label>
-                  <input type="text" value="" class="input-field" />
-                </div>
-              </div>
-              <div class="form-field">
-                <div class="form-column">
-                  <label class="label-field" for="">파일첨부</label>
-                  <input type="text" value="" class="input-field" />
-                  <button class="btn medium btn-primary ico-download line">
-                    다운로드
+              <div class="viewer-search viewer-search-md">
+                <div class="btn-wrap">
+                  <button class="btn btn-brand large">
+                    <i class="icon"
+                      ><img src="../asset/icon/ico_note_edit.svg" alt="" /></i
+                    >마스킹저장
                   </button>
                 </div>
+                <h2 class="viewer-title">조회내역</h2>
+                <div class="search-info">
+                  <div class="table-wrap">
+                    <table class="table">
+                      <colgroup>
+                        <col width="120px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">대출번호</th>
+                          <td>022012531535</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">대출신청번호</th>
+                          <td>고객번호</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">대출승인번호</th>
+                          <td>김사람</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">고객명</th>
+                          <td>2025-09-25</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">대출일</th>
+                          <td>강남</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">지점</th>
+                          <td>공인인증약정</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">담당자</th>
+                          <td>공인인증약정</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">등록일</th>
+                          <td>202509251482</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="btn-wrap">
+                    <button class="btn small btn-primary line">스캔</button>
+                    <button class="btn small btn-primary">다운로드</button>
+                  </div>
+                </div>
+                <div class="search-document">
+                  <div class="table-wrap">
+                    <table class="table">
+                      <caption>
+                        문서명 테이블
+                      </caption>
+                      <colgroup>
+                        <col style="width: 20%" />
+                        <col style="width: 16%" />
+                        <col style="width: auto" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="text-center">NO</th>
+                          <th scope="col">
+                            <div class="check-box">
+                              <input
+                                id="name02"
+                                type="checkbox"
+                                class="check-input" />
+                              <label class="label-field blind" for="name01"
+                                >선택됨</label
+                              >
+                            </div>
+                          </th>
+                          <th scope="col">임기</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">1</td>
+                          <td>
+                            <div class="check-box">
+                              <input
+                                id="name02"
+                                type="checkbox"
+                                class="check-input" />
+                              <label class="label-field blind" for="name02"
+                                >선택됨</label
+                              >
+                            </div>
+                          </td>
+                          <td>여신거래약정서</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">1</td>
+                          <td>
+                            <div class="check-box">
+                              <input
+                                id="name03"
+                                type="checkbox"
+                                class="check-input" />
+                              <label class="label-field blind" for="name03"
+                                >선택됨</label
+                              >
+                            </div>
+                          </td>
+                          <td>여신거래약정서</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">1</td>
+                          <td>
+                            <div class="check-box">
+                              <input
+                                id="name04"
+                                type="checkbox"
+                                class="check-input" />
+                              <label class="label-field blind" for="name04"
+                                >선택됨</label
+                              >
+                            </div>
+                          </td>
+                          <td>여신거래약정서</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">1</td>
+                          <td>
+                            <div class="check-box">
+                              <input
+                                id="name05"
+                                type="checkbox"
+                                class="check-input" />
+                              <label class="label-field blind" for="name05"
+                                >선택됨</label
+                              >
+                            </div>
+                          </td>
+                          <td>여신거래약정서</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="popup-footer">
-            <div class="btn-wrap">
-              <button class="btn btn-primary medium">오늘 하루 닫기</button>
-              <button class="btn btn-secondary medium">닫기</button>
             </div>
           </div>
         </div>
